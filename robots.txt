@@ -1,6 +1,6 @@
 robots.txt for Dr. Arjun Sahoo Physiotherapy Clinic
 
-URL: https://www.drarjunsahoo-physio.com/
+URL: https://kharagpurphysiotherapy.in/
 
 Allow all search engines to crawl the site
 
@@ -20,4 +20,4 @@ Crawl-delay: 10
 
 Point search engines directly to your sitemap
 
-Sitemap: https://www.google.com/search?q=https://www.drarjunsahoo-physio.com/sitemap.xml
+Sitemap: https://www.google.com/search?q=https://kharagpurphysiotherapy.in/sitemap.xml
