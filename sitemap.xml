@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+                            
+    <!-- Main Homepage & Core Content -->
+    <url>
+        <loc>https://www.drarjunsahoo-physio.com/</loc>
+        <lastmod>2026-04-15T21:00:00+05:30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- Advanced SEO: Google Image Sitemap Data -->
+        <!-- This explicitly tells Google to index your important clinic photos -->
+        <image:image>
+            <image:loc>https://www.drarjunsahoo-physio.com/logo.jpeg</image:loc>
+            <image:title>Dr. Arjun Sahoo Physiotherapy Clinic Logo</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.drarjunsahoo-physio.com/dr-arjun-sahoo.jpeg</image:loc>
+            <image:title>Dr. Arjun Sahoo - Best Physiotherapist in Kharagpur</image:title>
+            <image:caption>Dr. Arjun Sahoo (DPT, BPT) Consultant Physiotherapist</image:caption>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://www.drarjunsahoo-physio.com/clinic-photo-1.jpeg</image:loc>
+            <image:title>Physiotherapy Clinic Interior in Kharagpur</image:title>
+            <image:caption>State-of-the-art rehabilitation equipment at Dr. Arjun Sahoo's Clinic</image:caption>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://www.drarjunsahoo-physio.com/clinic-photo-2.jpeg</image:loc>
+            <image:title>Rehabilitation and Pain Management Center</image:title>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.drarjunsahoo-physio.com/clinic-photo-3.jpeg</image:loc>
+            <image:title>Kharagpur Physiotherapy Treatment Rooms</image:title>
+        </image:image>
+    </url>
+
+</urlset>
