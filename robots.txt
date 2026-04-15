@@ -1,0 +1,23 @@
+robots.txt for Dr. Arjun Sahoo Physiotherapy Clinic
+
+URL: https://www.drarjunsahoo-physio.com/
+
+Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+Prevent indexing of any future private, admin, or unnecessary directories
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.pdf$  # Optional: blocks indexing of direct PDF downloads if you add any
+
+Instruct search engines on how frequently they can request pages (crawl delay in seconds)
+
+Crawl-delay: 10
+
+Point search engines directly to your sitemap
+
+Sitemap: https://www.google.com/search?q=https://www.drarjunsahoo-physio.com/sitemap.xml
