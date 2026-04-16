@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Global interceptor for anchor links to handle cross-page navigation flawlessly
     document.addEventListener('click', (e) => {
         const anchor = e.target.closest('a[href^="#"]');
         if (!anchor) return;
@@ -43,14 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetId = anchor.getAttribute('href').substring(1);
         if (!targetId) return;
 
-        // Skip if this anchor is specifically triggering switchPage via onclick to avoid conflicts
         if (anchor.getAttribute('onclick') && anchor.getAttribute('onclick').includes('switchPage')) return;
         
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
             const parentPage = targetElement.closest('.page-section');
             
-            // If the target section is inside a currently hidden page, switch to it first
             if (parentPage && parentPage.classList.contains('hidden')) {
                 document.querySelectorAll('.page-section').forEach(page => {
                     page.classList.add('hidden');
@@ -59,20 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 parentPage.classList.remove('hidden');
                 parentPage.classList.add('block');
                 
-                // Re-observe animations for the revealed page
                 parentPage.querySelectorAll('.reveal-up').forEach(el => {
                     el.classList.remove('active');
                     observer.observe(el);
                 });
             }
             
-            // Prevent default instant jump and smoothly scroll to the target instead
             e.preventDefault();
             setTimeout(() => {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
-                // Update URL hash seamlessly
                 history.replaceState(null, null, '#' + targetId);
-            }, 50); // Tiny delay to allow the browser to render display:block
+            }, 50);
         }
     });
 
@@ -176,31 +170,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const typewriterElement = document.getElementById('typewriter-text');
     if (typewriterElement) {
-        const words = ['Paralysis Rehab.', 'Knee Replacement.', 'Sports Injuries.', 'Manual Therapy.'];
+        const words = ['Paralysis Rehab.', 'Knee Replacement', 'Sports Injuries.', 'Manual Therapy.'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-
-        // --- Fix for Up/Down Movement (Layout Shift) ---
-        // 1. Give the parent heading a minimum height so it doesn't resize when words wrap
-        const heading = typewriterElement.closest('h1');
-        if (heading) {
-            heading.style.minHeight = '3.5em'; 
-        }
         
-        // 2. Prevent the span itself from collapsing to 0 width/height when empty
         typewriterElement.style.display = 'inline-block';
-        // -----------------------------------------------
 
         function type() {
             const currentWord = words[wordIndex];
             
             if (isDeleting) {
-                // Use a non-breaking space fallback (\u00A0) to maintain line height even when empty
                 typewriterElement.textContent = currentWord.substring(0, charIndex - 1) || '\u00A0';
                 charIndex--;
             } else {
-                // Use a non-breaking space fallback (\u00A0) to maintain line height even when empty
                 typewriterElement.textContent = currentWord.substring(0, charIndex + 1) || '\u00A0';
                 charIndex++;
             }
@@ -313,4 +296,4 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
         }
     });
-});
+});  
